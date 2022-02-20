@@ -43,15 +43,14 @@ plt.show()
 
 #Pre-process the data
 
-#10.	The current target values range from 0 to 9 i.e. 10 classes. Transform the target variable to 3 classes as follows:
-#a.	Any digit between 0 and 3 inclusive should be assigned a target value of 0
-#b.	Any digit between 4 and 6 inclusive should be assigned a target value of 1
-#c.	Any digit between 7 and 9 inclusive should be assigned a target value of 9 
-#(Hint: you can use numpy.where to carry out the transformation on the target.)
-
+#	The current target values range from 0 to 9 i.e. 10 classes. Transform the target variable to 3 classes as follows:
+# a.	Any digit between 0 and 3 inclusive should be assigned a target value of 0
+# b.	Any digit between 4 and 6 inclusive should be assigned a target value of 1
+# c.	Any digit between 7 and 9 inclusive should be assigned a target value of 9
+# d.	Use the following code to do this:
 y_jay_new = np.where(y_jay < 4, 0, y_jay)
-y_jay_new = np.where((y_jay_new > 3) & (y_jay_new < 8) , 1, y_jay_new)
-y_jay_new = np.where((y_jay_new > 7) & (y_jay_new < 12), 9, y_jay_new)
+y_jay_new = np.where((y_jay_new > 3) & (y_jay_new < 7) , 1, y_jay_new)
+y_jay_new = np.where((y_jay_new > 6) & (y_jay_new < 10), 9, y_jay_new)
 print(y_jay_new)
 
 # Print the frequencies of each of the three target classes in y_jay_new
